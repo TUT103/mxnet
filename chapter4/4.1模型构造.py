@@ -13,12 +13,16 @@ class MLP(nn.Block):
         return self.output(self.hidden(x))
 
 
-X = nd.random.uniform(shape=(2, 20))
+X = nd.random.uniform(shape=(1, 20))
+print("X", X)
 net = MLP()
+print("net", net)
 net.initialize()
+print("net", net)
 print(net(X))
 
-""" 4.1.2Sequential类继承自Block类 """
+""" 4.1.2 Sequential类继承自Block类 """
+print("4.1.2 Sequential类继承自Block类")
 
 
 class MySequential(nn.Block):

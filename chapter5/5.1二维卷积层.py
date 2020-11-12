@@ -20,14 +20,14 @@ print(corr2d(X, K))
 """ 5.1.2二维卷积层 """
 
 
-class Conc2D(nn.Block):
+class Conv2D(nn.Block):
     def __init__(self, kernel_size, **kwargs):
         super(Conv2D, self).__init__(**kwargs)
         self.weight = self.params.get('weight', shape=kernel_size)
         self.bias = self.params.get('bias', shape=(1,))
 
     def forward(self, x):
-        return corr2d(x, self.weight.data()) + shape.bias.data()
+        return corr2d(x, self.weight.data()) + self.bias.data()
 
 
 """ 5.1.3图像中物体边缘检测 """
